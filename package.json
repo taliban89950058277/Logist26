@@ -1,0 +1,27 @@
+{
+  "name": "carrier-city-map",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm:server\" \"npm:web\"",
+    "server": "node server/index.js",
+    "start": "node server/index.js",
+    "web": "vite --host 0.0.0.0",
+    "import:data": "node server/import-data.js",
+    "import:setup": "python3 -m venv .venv-import && .venv-import/bin/pip install -r requirements-import.txt",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
